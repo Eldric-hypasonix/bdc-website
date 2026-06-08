@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Database Terminal - My SCP Archive</title>
+    <link rel="stylesheet" href="CSS/BDC_Style.css">
+    <style>
+        /* Custom tweaks specifically for the index hub layout */
+        .hub-nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #222;
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid #444;
+        }
+        .hub-nav a {
+            color: #4af24a; /* Classic terminal green links */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .hub-nav a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .archive-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .archive-table th, .archive-table td {
+            border: 1px solid #333;
+            padding: 12px;
+            text-align: left;
+        }
+        .archive-table th {
+            background-color: #222;
+            color: #ffffff;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+        .archive-table tr:hover {
+            background-color: #1f1f1f;
+        }
+        .archive-table a {
+            color: #dcdcdc;
+            text-decoration: none;
+        }
+        .archive-table a:hover {
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="security-banner">
+        <h1>WARNING: LEVEL 4 SECURITY CLEARANCE REQUIRED</h1>
+        <p>FOUNDATION NETWORK INTRUSION DETECTION SYSTEMS ARE ACTIVE. ALL CONNECTIONS LOGGED.</p>
+    </header>
+
+    <main class="database-container">
+        
+        <section class="doc-header">
+            <h2 class="item-id">MY SCP ARCHIVE</h2>
+            <div class="meta-info">
+                <p><strong>TERMINAL STATUS:</strong> ONLINE</p>
+                <p><strong>ACCESS LEVEL:</strong> <span class="clearance-lvl lvl-4">LEVEL 4 (SECRET)</span></p>
+            </div>
+        </section>
+
+        <p style="margin-top: 15px;">
+            Welcome to the local archival node. Use the terminal directories below to browse intercepted documentation, containment logs, and anomalous data manifests.
+        </p>
+
+        <nav class="hub-nav">
+            <a href="Creatures/">CREATURES</a>
+            <a href="Artifacts/">ARTIFACTS</a>
+            <a href="Locations/">LOCATIONS</a>
+            <a href="Events/">EVENTS</a>
+            <a href="Personnel/">PERSONNEL</a>
+        </nav>
+
+        <hr class="divider">
+
+        <section class="manifest-block">
+            <h3>RECENTLY UPDATED MANIFESTS:</h3>
+            <table class="archive-table">
+                <thead>
+                    <tr>
+                        <th>FILE ID</th>
+                        <th>OBJECT CLASS</th>
+                        <th>DOCUMENT TITLE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>CR-0001</strong></td>
+                        <td><span class="class-euclid">EUCLID</span></td>
+                        <td><a href="/Creatures/Entity-0001.html">The Whispering Mask</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>ART-0057</strong></td>
+                        <td><span class="class-safe">SAFE</span></td>
+                        <td><a href="/Artifacts/ART-0072.html">The Bronze Mirror</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>LOC-0089</strong></td>
+                        <td><span class="class-keter">KETER</span></td>
+                        <td><a href="/Locations/LOC-0036.html">[DATA CORRUPTED]</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>SECURE. CONTAIN. PROTECT.</p>
+        <p>Internal Foundation Network Hub &copy; 2026. Data classification protocols apply.</p>
+    </footer>
+    <script src="js/search.js"></script>
+    <script src="Js/darkmode.js"></script>
+</body>
+</html>
