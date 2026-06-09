@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDC Archive - Master Directory</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <style>
+        /* Directory Page Specific Styles */
+        .directory-master {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .category-card {
+            background-color: #111111;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: #dd3333;
+        }
+        
+        .category-card h2 {
+            color: #dd3333;
+            border-left: none;
+            padding-left: 0;
+            margin-top: 0;
+        }
+        
+        .file-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+        
+        .file-list li {
+            margin: 8px 0;
+            padding: 8px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        
+        .file-list li:hover {
+            background-color: #1a1a1a;
+        }
+        
+        .file-list a {
+            color: #c0c0c0;
+            text-decoration: none;
+            font-family: monospace;
+            font-size: 14px;
+            display: block;
+        }
+        
+        .file-list a:hover {
+            color: #dd3333;
+        }
+        
+        .class-badge {
+            display: inline-block;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 10px;
+        }
+        
+        .empty-message {
+            color: #555;
+            font-style: italic;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #888;
+        }
+        
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .file-count {
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="directory-master">
+    <div class="security-banner">
+        <h1>🔒 MASTER DIRECTORY ACCESS</h1>
+        <p>CLEARANCE LEVEL: 4 — AUTHORIZED PERSONNEL ONLY</p>
+    </div>
+
+    <div class="doc-header">
+        <h1 class="item-id">📁 BDC ARCHIVE DIRECTORY</h1>
+        <p>Browse all available manifests, logs, and anomaly records.</p>
+    </div>
+
+    <div class="category-grid" id="categoryGrid">
+        <!-- JavaScript will populate this -->
+    </div>
+
+    <hr class="divider">
+    <a href="index.html" class="back-link">← BACK TO MAIN TERMINAL</a>
+</div>
+
+<script>
+    // ============================================
+    // MASTER FILE DATABASE
+    // Add your files here as you create them
+    // ============================================
+    
+    const fileDatabase = {
+        Creatures: {
+            displayName: "🐾 CREATURES",
+            clearance: "Level 3",
+            files: [
+                { name: "Entity-0001", title: "The Whispering Mask", class: "euclid", url: "Creatures/Entity-0001.html" }
+                // Add more creature files here when you create them:
+                // { name: "Entity-0002", title: "The Shadow Walker", class: "keter", url: "Creatures/Entity-0002.html" }
+            ]
+        },
+        Artifacts: {
+            displayName: "🏺 ARTIFACTS",
+            clearance: "Level 2",
+            files: [
+                { name: "ART-0072", title: "The Bronze Mirror", class: "safe", url: "Artifacts/ART-0072.html" }
+                // Add more artifact files here
+            ]
+        },
+        Locations: {
+            displayName: "📍 LOCATIONS",
+            clearance: "Level 4",
+            files: [
+                { name: "LOC-0036", title: "The Endless Stairwell", class: "keter", url: "Locations/LOC-0036.html" }
+                // Add more location files here
+            ]
+        },
+        Events: {
+            displayName: "⚠️ EVENTS",
+            clearance: "Level 3",
+            files: [
+                // Add event files here when you create them
+                // { name: "EVT-0001", title: "Incident at Site-19", class: "keter", url: "Events/EVT-0001.html" }
+            ]
+        },
+        Personnel: {
+            displayName: "👤 PERSONNEL",
+            clearance: "Level 1",
+            files: [
+                // Add personnel files here when you create them
+                // { name: "PRS-0001", title: "Dr. Myat Thant", class: "level3", url: "Personnel/PRS-0001.html" }
+            ]
+        }
+    };
+
+    // Object Class Colors
+    const classColors = {
+        safe: "#33cc33",
+        euclid: "#3399ff",
+        keter: "#ccaa22",
+        thaumiel: "#cc3333",
+        level1: "#3366aa",
+        level2: "#2244aa",
+        level3: "#ccaa22",
+        level4: "#aa66cc",
+        level5: "#8822aa"
+    };
+
+    function renderDirectory() {
+        const grid = document.getElementById('categoryGrid');
+        
+        for (const [key, category] of Object.entries(fileDatabase)) {
+            const card = document.createElement('div');
+            card.className = 'category-card';
+            
+            const fileCount = category.files.length;
+            const hasFiles = fileCount > 0;
+            
+            // Category Header
+            card.innerHTML = `
+                <div class="category-header">
+                    <h2>${category.displayName}</h2>
+                    <span class="file-count">📄 ${fileCount} file(s)</span>
+                </div>
+                <div class="clearance" style="font-size: 12px; margin-bottom: 15px;">
+                    ${category.clearance} clearance required
+                </div>
+                <div class="file-list" id="file-list-${key}">
+                    ${hasFiles ? '' : '<div class="empty-message">⛔ [NO DECRYPTED MANIFESTS]<br>Standby for data retrieval...</div>'}
+                </div>
+            `;
+            
+            grid.appendChild(card);
+            
+            // Populate files if they exist
+            if (hasFiles) {
+                const fileListDiv = document.getElementById(`file-list-${key}`);
+                category.files.forEach(file => {
+                    const listItem = document.createElement('li');
+                    const classColor = classColors[file.class] || "#c0c0c0";
+                    
+                    listItem.innerHTML = `
+                        <a href="${file.url}">
+                            📄 ${file.name} — ${file.title}
+                            <span class="class-badge" style="background-color: ${classColor}20; border-left: 2px solid ${classColor};">
+                                ${file.class.toUpperCase()}
+                            </span>
+                        </a>
+                    `;
+                    fileListDiv.appendChild(listItem);
+                });
+            }
+        }
+    }
+    
+    // Run when page loads
+    renderDirectory();
+</script>
+
+<script src="Js/search.js"></script>
+<script src="Js/darkmode.js"></script>
+</body>
+</html>

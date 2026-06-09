@@ -1,0 +1,66 @@
+/* creatures.css – Entity/Creature Page Styles */
+
+/* Entity specific container */
+.entity-container {
+    background-color: #0a0a0a;
+}
+
+/* Procedure block for creatures */
+.procedures-block {
+    background-color: #111111;
+    border-left: 4px solid #3399ff;
+}
+
+/* Description block */
+.description-block {
+    background-color: #111111;
+    border-left: 4px solid #3399ff;
+}
+
+.description-block p {
+    margin: 15px 0;
+}
+
+/* Addendum block */
+.addendum-block {
+    background-color: #111111;
+    border-left: 4px solid #ccaa22;
+}
+
+/* Redacted text for creatures */
+.redacted {
+    background-color: #111;
+    color: #111;
+    padding: 0 8px;
+    border-radius: 3px;
+}
+
+.redacted:hover {
+    color: #dd3333;
+    background-color: #1a1a1a;
+}
+
+/* Clearance levels */
+.clearance-1v1-3 {
+    color: #ccaa22;
+    font-weight: bold;
+}
+
+/* Class Euclid specific (for creatures) */
+.class-euclid {
+    color: #3399ff;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-left: 3px solid #3399ff;
+}
+
+/* Responsive for creatures */
+@media (max-width: 768px) {
+    .procedures-block, .description-block, .addendum-block {
+        padding: 12px;
+    }
+    
+    .redacted {
+        padding: 0 4px;
+    }
+}

@@ -1,0 +1,69 @@
+/* artifacts.css – Artifact/Object Page Styles */
+
+/* Procedure block for artifacts */
+.procedures-block {
+    background-color: #111111;
+    border-left: 4px solid #33cc33;
+}
+
+/* Description block */
+.description-block {
+    background-color: #111111;
+    border-left: 4px solid #33cc33;
+}
+
+.description-block p {
+    margin: 15px 0;
+}
+
+/* Addendum / Incident block */
+.addendum-block {
+    background-color: #111111;
+    border-left: 4px solid #ccaa22;
+}
+
+/* Class Safe specific */
+.class-safe {
+    color: #33cc33;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-left: 3px solid #33cc33;
+}
+
+/* Clearance for artifacts */
+.clearance-1v1-2 {
+    color: #3399ff;
+    font-weight: bold;
+}
+
+/* Redacted text */
+.redacted {
+    background-color: #111;
+    color: #111;
+    padding: 0 8px;
+    border-radius: 3px;
+}
+
+.redacted:hover {
+    color: #dd3333;
+}
+
+/* Incident report styling */
+.addendum-block p {
+    margin: 10px 0;
+}
+
+.addendum-block strong {
+    color: #dd3333;
+}
+
+/* Responsive for artifacts */
+@media (max-width: 768px) {
+    .procedures-block, .description-block, .addendum-block {
+        padding: 12px;
+    }
+    
+    .description-block p {
+        font-size: 14px;
+    }
+}
