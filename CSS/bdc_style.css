@@ -158,13 +158,3 @@ footer {
     color: #444444;
     letter-spacing: 1px;
 }
-
-body {
-    background-color:black !important;
-    color: lime !important;
-    font-family:monospace !important;
-}
-
-h1 {
-    color:red !important;
-}
