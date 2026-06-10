@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://eldric-hypasonix.github.io/bdc-website/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://eldric-hypasonix.github.io/bdc-website/directory.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://eldric-hypasonix.github.io/bdc-website/Creatures/Entity-0001.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://eldric-hypasonix.github.io/bdc-website/Artifacts/ART-0072.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://eldric-hypasonix.github.io/bdc-website/Locations/LOC-0036.html</loc>
+    <priority>0.80</priority>
+  </url>
+</urlset>
